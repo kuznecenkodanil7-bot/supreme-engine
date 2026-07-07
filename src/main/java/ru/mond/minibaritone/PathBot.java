@@ -199,7 +199,7 @@ final class PathBot {
 
         BlockPos target = path.get(pathIndex);
         Vec3d targetCenter = Vec3d.ofBottomCenter(target);
-        double distance = player.getPos().distanceTo(targetCenter);
+        double distance = player.getBlockPos().toCenterPos().distanceTo(targetCenter);
 
         if (distance < 0.65) {
             pathIndex++;
@@ -298,7 +298,7 @@ final class PathBot {
 
     private void checkStuck(MinecraftClient client) {
         ClientPlayerEntity player = client.player;
-        Vec3d now = player.getPos();
+        Vec3d now = player.getBlockPos().toCenterPos();
 
         if (now.squaredDistanceTo(lastPlayerPos) < 0.0009) {
             stuckTicks++;
@@ -372,7 +372,7 @@ final class PathBot {
             return false;
         }
 
-        client.player.getInventory().selectedSlot = slot;
+        client.player.getInventory().setSelectedSlot(slot);
 
         Direction placeSide = Direction.UP;
         BlockPos clicked = supportPos.down();
