@@ -10,6 +10,8 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
+    // Fabric Loom сам добавляет служебные project repositories.
+    // FAIL_ON_PROJECT_REPOS ломает сборку Fabric-проектов на новых Gradle.
     repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
 
     repositories {
