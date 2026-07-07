@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "minibaritone",
+  "version": "${version}",
+  "name": "MiniBaritone Fabric",
+  "description": "Учебный клиентский pathfinding-мод: goto, breakfront, mine/tree, обход препятствий, установка блоков.",
+  "authors": ["Mond + ChatGPT"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/minibaritone/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "ru.mond.minibaritone.MiniBaritoneClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
